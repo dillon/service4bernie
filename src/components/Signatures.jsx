@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import styled from '@emotion/styled';
 import * as colors from '../styles/colors';
-import Link from './Link';
 
 const TableStyled = styled.table`
   font-size: .85em;

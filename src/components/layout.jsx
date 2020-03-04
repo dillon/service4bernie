@@ -8,7 +8,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
 import globalStyles from '../styles/globalStyles';
 import Header from './Header';

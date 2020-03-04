@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import { Textfit } from 'react-textfit';
-import Link from './Link';
 import * as colors from '../styles/colors';
 import ContentBlock from './ContentBlock';
 import Image from './Image';
@@ -18,7 +16,6 @@ const GatsbyLinkStyled = styled(GatsbyLink)`
 const H1 = styled.h1`
   margin: 0;
   margin-top: 1.5rem;
-  /* margin-bottom: 1rem; */
   text-align: center;
   user-select: none;
 
@@ -38,7 +35,7 @@ const ImageContainer = styled.div`
   max-height: 50vh;
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
       background: colors.blue,
@@ -63,13 +60,5 @@ const Header = ({ siteTitle }) => (
     </ContentBlock>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
-};
 
 export default Header;
