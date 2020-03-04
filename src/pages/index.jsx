@@ -1,12 +1,21 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import * as colors from '../styles/colors';
 
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ContentBlock from '../components/ContentBlock';
 import Letter from '../components/Letter';
 import Signatures from '../components/Signatures';
 import Link from '../components/Link';
+
+
+const CollapsingRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width:370px) {
+    flex-direction: column;
+  }
+`;
 
 const IndexPage = () => (
   <>
@@ -20,6 +29,19 @@ const IndexPage = () => (
     >
       <ContentBlock>
         <Letter short />
+      </ContentBlock>
+      <ContentBlock noWrapperPadding>
+        <CollapsingRow>
+          <div>
+            <Link internal to="/letter">Read More</Link>
+          </div>
+          <div>
+            <Link external to="https://berniesanders.com/volunteer/">Volunteer</Link>
+          </div>
+          <div>
+            <Link external to="mailto:service4bernie@gmail.com">Contact</Link>
+          </div>
+        </CollapsingRow>
       </ContentBlock>
       <ContentBlock>
         <div style={{ display: 'flex' }}>

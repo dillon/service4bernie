@@ -24,7 +24,7 @@ export default `
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
     color: white;
   }

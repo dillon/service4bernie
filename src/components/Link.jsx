@@ -16,8 +16,9 @@ const ExternalLink = styled.a`
   font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: .9em;
   color: currentColor;
+  border-bottom: 1px solid transparent;
   &:hover {
-    border-bottom: 1px solid ${colors.red};
+    border-bottom-color: ${colors.red};
   }
 `;
 

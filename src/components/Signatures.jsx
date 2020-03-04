@@ -37,6 +37,7 @@ class Signatures extends React.Component {
       .catch((x) => this.setState({ error: `Error connecting to google sheets. Please disable adblock or try another browser. ${x && x.message}` }))
       .then((x) => x && x.data && x.data.feed && x.data.feed.entry)
       .then((cells) => {
+        if (!cells) this.setState({ error: 'Error connecting to google sheets. Please disable adblock or try another browser.' });
         const rowsWithHeader = cells.reduce((acc, cell) => {
           const row = Number(cell.gs$cell.row);
           const column = Number(cell.gs$cell.col);

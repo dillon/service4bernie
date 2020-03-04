@@ -3,7 +3,7 @@ import Link from './Link';
 
 const Letter = ({ short }) => (
   <div>
-    <p>
+    <p style={{ marginTop: 0 }}>
       As members of the food service industry, we endorse Bernie Sanders for President.
       His platform attempts to address the precarity faced by service workers, and we
       see him as an ally in our struggle for stable, dignified lives. As we well know,
@@ -14,7 +14,7 @@ const Letter = ({ short }) => (
       not unorganized or divided. With a collective voice, we invite Bernie into our
       struggle, and commit ourselves to the campaign.
     </p>
-    <p>
+    <p style={{ marginBottom: 0 }}>
       We come together as service industry workers to imagine a brighter
       {' '}
       <i>present and future</i>
@@ -29,14 +29,14 @@ const Letter = ({ short }) => (
     </p>
     <div>
       {short
-        ? <Link internal to="/letter">Read More</Link>
+        ? ''
         : (
           <>
             <p>
               Here are a few of the many reasons why the service industry SPECIFICALLY
               should and DOES support Bernie Sanders for President:
             </p>
-            <ol>
+            <ol style={{ marginBottom: 0 }}>
               <li>
                 Simply put, we need single-payer Medicare For All. We need the freedom of
                 movement it provides, both for ourselves and for our families. Many of us
@@ -112,7 +112,7 @@ const Letter = ({ short }) => (
                 Some of us have the schedules and flexibility to organize for these very
                 changes; a match made in heaven.
               </li>
-              <li>
+              <li style={{ marginBottom: 0 }}>
                 The Sanders movement is the sole campaign invested in a hopeful and
                 joyful vision of the future beyond a &ldquo;just good enough&rdquo; neoliberal
                 present in which most people struggle to survive. We may love service
@@ -127,6 +127,7 @@ const Letter = ({ short }) => (
             </ol>
           </>
         )}
+
     </div>
 
   </div>

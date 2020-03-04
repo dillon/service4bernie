@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'SERVICE4BERNIE',
-    description: 'Service Workers for Bernie.', // TODO
+    title: 'Service4Bernie',
+    description: 'As members of the food service industry, we endorse Bernie Sanders for President. His platform attempts to address the precarity faced by service workers, and we see him as an ally in our struggle for stable, dignified lives.',
   },
+  pathPrefix: '/service4bernie',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -23,13 +24,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'SERVICE4BERNIE',
-        short_name: 'SW4Bernie',
+        name: 'Service4Bernie',
+        short_name: 'Service4Bernie',
         start_url: '/',
-        background_color: 'red',
-        theme_color: 'red',
+        background_color: 'rgb(244,35,18)',
+        theme_color: 'rgb(244,35,18)',
         display: 'minimal-ui',
-        icon: 'src/images/sanders-sitin.jpg', // This path is relative to the root of the site.
+        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

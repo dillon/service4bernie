@@ -1,16 +1,24 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import { Link as GatsbyLink } from 'gatsby';
 import { Textfit } from 'react-textfit';
+import Link from './Link';
 import * as colors from '../styles/colors';
 import ContentBlock from './ContentBlock';
 import Image from './Image';
 
+const GatsbyLinkStyled = styled(GatsbyLink)`
+  color: inherit;
+  font-size: inherit;
+  background-color: inherit;
+  text-decoration: none;
+`;
 
 const H1 = styled.h1`
   margin: 0;
   margin-top: 1.5rem;
+  /* margin-bottom: 1rem; */
   text-align: center;
   user-select: none;
 
@@ -41,15 +49,17 @@ const Header = ({ siteTitle }) => (
       <Image />
     </ImageContainer>
     <ContentBlock>
-      <H1>
-        <Textfit mode="single">
-          <span className="container">
-            SERVICE
-            <span style={{ color: colors.red }}>4</span>
-            BERNIE
-          </span>
-        </Textfit>
-      </H1>
+      <GatsbyLinkStyled to="/">
+        <H1>
+          <Textfit mode="single">
+            <span className="container">
+              SERVICE
+              <span style={{ color: colors.red }}>4</span>
+              BERNIE
+            </span>
+          </Textfit>
+        </H1>
+      </GatsbyLinkStyled>
     </ContentBlock>
   </header>
 );
