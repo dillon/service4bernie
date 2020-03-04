@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+      "document": true,
+      "window": true,
+      "process": true,
+      "history": true
+  },
+  "rules": {
+      "import/extensions": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unresolved": 0,
+      "react/jsx-filename-extension": [1, {
+        "extensions": [".js", ".jsx"]
+        }],
+        "react/prop-types": 0,
+        "react/jsx-fragments": 0,
+        "react/state-in-constructor": 0,
+        "react/jsx-props-no-spreading": 0
+  }
+}
