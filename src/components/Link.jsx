@@ -3,12 +3,29 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import * as colors from '../styles/colors';
 
+const FakeLink = styled.button`
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  background: inherit;
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: .9em;
+  color: currentColor;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom-color: ${colors.red};
+  }
+`;
+
 const InternalLink = styled(Link)`
   font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: .9em;
   color: currentColor;
+  border-bottom: 1px solid transparent;
   &:hover {
-    border-bottom: 1px solid ${colors.red};
+    border-bottom-color: ${colors.red};
   }
 `;
 
@@ -30,7 +47,7 @@ const InternalButton = styled(InternalLink)`
   background: ${colors.red};
   &:hover {
     background: ${colors.redDark};
-    border-bottom: none;
+    border-bottom-color: transparent;
   }
 `;
 
@@ -42,13 +59,20 @@ const ExternalButton = styled(ExternalLink)`
   background: ${colors.red};
   &:hover {
     background: ${colors.redDark};
-    border-bottom: none;
+    border-bottom-color: transparent;
   }
 `;
 
 const LinkComponent = ({
-  to, button, external, internal, ...props
+  to, button, fake, external, internal, ...props
 }) => {
+  if (fake) {
+    return (
+      <FakeLink
+        {...props}
+      />
+    );
+  }
   if (button) {
     if (internal && !external) {
       return (

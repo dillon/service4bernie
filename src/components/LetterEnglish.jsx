@@ -2,7 +2,7 @@ import React from 'react';
 
 const Letter = ({ short }) => (
   <div>
-    <p style={{ marginTop: 0 }}>
+    <p>
       As members of the food service industry, we endorse Bernie Sanders for President.
       His platform attempts to address the precarity faced by service workers, and we
       see him as an ally in our struggle for stable, dignified lives. As we well know,

@@ -62,10 +62,11 @@ class Signatures extends React.Component {
     const {
       numberOfRows, rows, error,
     } = this.state;
+    const { spanish } = this.props;
     return (
       <div>
         <div>
-          Number of Signatures:
+          {spanish ? 'Numero de firmas:' : 'Number of Signatures:'}
           {' '}
           {numberOfRows}
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import * as colors from '../styles/colors';
-import Link from '../components/Link';
-import SEO from '../components/SEO';
-import ContentBlock from '../components/ContentBlock';
-import LetterEnglish from '../components/LetterEnglish';
+import * as colors from '../../styles/colors';
+import Link from '../../components/Link';
+import SEO from '../../components/SEO';
+import ContentBlock from '../../components/ContentBlock';
+import LetterSpanish from '../../components/LetterSpanish';
 
 const CollapsingRow = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const CollapsingRow = styled.div`
 
 const LetterPage = () => (
   <>
-    <SEO />
+    <SEO lang="es" />
     <div
       style={{
         background: colors.blue,
@@ -26,18 +26,18 @@ const LetterPage = () => (
       }}
     >
       <ContentBlock>
-        <LetterEnglish />
+        <LetterSpanish />
       </ContentBlock>
       <ContentBlock noWrapperPadding>
         <CollapsingRow>
           <div>
-            <Link internal to="/">Back</Link>
+            <Link internal to="/es">Back</Link>
           </div>
           <div>
-            <Link external to="https://berniesanders.com/volunteer/">Volunteer</Link>
+            <Link external to="https://berniesanders.com/volunteer/">Voluntario</Link>
           </div>
           <div>
-            <Link external to="mailto:service4bernie@gmail.com">Contact</Link>
+            <Link external to="mailto:service4bernie@gmail.com">Contacto</Link>
           </div>
         </CollapsingRow>
 
