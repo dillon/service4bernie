@@ -37,23 +37,31 @@ class Signatures extends React.Component {
       .then((x) => x && x.data && x.data.feed && x.data.feed.entry)
       .then((cells) => {
         if (!cells) this.setState({ error: 'Error connecting to google sheets. Please disable adblock or try another browser.' });
+        let numberOfColumns = 0;
         const rowsWithHeader = cells.reduce((acc, cell) => {
           const row = Number(cell.gs$cell.row);
           const column = Number(cell.gs$cell.col);
+          if (row === 1) numberOfColumns += 1;
           if (column !== 1) { // filter out timestamp
-            acc[row - 1] = [...(acc[row - 1] || []), cell.content.$t];
+            if (!acc[row - 1]) acc[row - 1] = new Array(numberOfColumns).fill(' ');
+            acc[row - 1][column - 1] = cell.content.$t;
           }
           return acc;
         }, []);
         const rows = rowsWithHeader
-          .slice(1) // filter out headers
+          .slice(1) // remove headers
+          .map((x) => x.splice(1)) // remove timestamp
           .sort((a, b) => a > b); // alphabetize
-        this.setState({ rows, numberOfRows: rows.length, error: null });
+        this.setState({
+          rows, numberOfRows: rows.length, numberOfColumns, error: null,
+        });
       });
   }
 
   render() {
-    const { numberOfRows, rows, error } = this.state;
+    const {
+      numberOfRows, numberOfColumns, rows, error,
+    } = this.state;
     return (
       <div>
         <div>
@@ -61,6 +69,7 @@ class Signatures extends React.Component {
           {' '}
           {numberOfRows}
         </div>
+        {numberOfColumns}
         <p>{error}</p>
         <TableStyled>
           {rows && rows.map((columns) => (

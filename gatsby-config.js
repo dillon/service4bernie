@@ -3,7 +3,6 @@ module.exports = {
     title: 'Service4Bernie',
     description: 'As members of the food service industry, we endorse Bernie Sanders for President. His platform attempts to address the precarity faced by service workers, and we see him as an ally in our struggle for stable, dignified lives.',
   },
-  pathPrefix: '/service4bernie',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
