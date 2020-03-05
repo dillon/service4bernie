@@ -60,7 +60,7 @@ class Signatures extends React.Component {
 
   render() {
     const {
-      numberOfRows, numberOfColumns, rows, error,
+      numberOfRows, rows, error,
     } = this.state;
     return (
       <div>
@@ -69,7 +69,6 @@ class Signatures extends React.Component {
           {' '}
           {numberOfRows}
         </div>
-        {numberOfColumns}
         <p>{error}</p>
         <TableStyled>
           {rows && rows.map((columns) => (
