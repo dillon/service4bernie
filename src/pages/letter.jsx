@@ -26,6 +26,13 @@ const LetterPage = () => (
       }}
     >
       <ContentBlock>
+        <div>
+          <Link style={{ fontSize: '.75em', textDecoration: 'none', borderBottomColor: colors.black }} internal to="/letter">English</Link>
+          {' '}
+          <b>/</b>
+          {' '}
+          <Link style={{ fontSize: '.75em', textDecoration: 'none' }} internal to="/es/letter">Español</Link>
+        </div>
         <LetterEnglish />
       </ContentBlock>
       <ContentBlock noWrapperPadding>

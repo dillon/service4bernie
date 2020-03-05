@@ -26,6 +26,13 @@ const LetterPage = () => (
       }}
     >
       <ContentBlock>
+        <div>
+          <Link style={{ fontSize: '.75em', textDecoration: 'none' }} internal to="/letter">English</Link>
+          {' '}
+          <b>/</b>
+          {' '}
+          <Link style={{ fontSize: '.75em', textDecoration: 'none', borderBottomColor: colors.black }} internal to="/es/letter">Español</Link>
+        </div>
         <LetterSpanish />
       </ContentBlock>
       <ContentBlock noWrapperPadding>
@@ -46,7 +53,7 @@ const LetterPage = () => (
       <ContentBlock>
         <div style={{ display: 'flex' }}>
           <Link style={{ flex: 1 }} button external to="https://docs.google.com/forms/d/e/1FAIpQLScLnCwB99uTtfoF5arewMXdsaX6nLrRzg4ErxTg6aY2E6zqxw/viewform?usp=sf_link">
-            Sign your name
+            Firma tu nombre
           </Link>
         </div>
       </ContentBlock>
