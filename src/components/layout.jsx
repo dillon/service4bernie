@@ -23,6 +23,8 @@ const Layout = ({ children }) => {
     }
   `);
 
+  // eslint-disable-next-line no-console
+  console.log('github.com/dillon');
   return (
     <>
       <Global styles={css`${globalStyles}`} />
