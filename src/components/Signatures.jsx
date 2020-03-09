@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import axios from 'axios';
 import styled from '@emotion/styled';
@@ -51,9 +52,20 @@ class Signatures extends React.Component {
         const rows = rowsWithHeader
           .slice(1) // remove headers
           .map((x) => x.splice(1)) // remove timestamp
-          .sort((a, b) => a > b); // alphabetize
+          .map((x) => { // fix sorting
+            let newName = '';
+            const name = x.slice(0, 1)[0];
+            const rest = x.slice(1);
+            try {
+              newName = name.slice(0, 1).toUpperCase() + name.slice(1);
+            } catch (e) {
+              newName = name;
+            }
+            return [newName, ...rest];
+          })
+          .sort(); // alphabetize
         this.setState({
-          rows, numberOfRows: rows.length, numberOfColumns, error: null,
+          rows, numberOfRows: rows.length, error: null,
         });
       });
   }
@@ -72,9 +84,9 @@ class Signatures extends React.Component {
         </div>
         <p>{error}</p>
         <TableStyled>
-          {rows && rows.map((columns) => (
-            <tr>
-              {columns && columns.map((value) => <td>{value}</td>)}
+          {rows && rows.map((columns, i) => (
+            <tr key={`${columns}_${i}`}>
+              {columns && columns.map((value, j) => <td key={`${value}_${j}`}>{value}</td>)}
             </tr>
           ))}
         </TableStyled>
